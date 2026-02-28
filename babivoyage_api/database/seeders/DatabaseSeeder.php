@@ -10,6 +10,9 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        $this->call([
+            AirportSeeder::class,
+            FlightSeeder::class,]); 
         
         Airport::upsert([
             ['code'=>'JFK','city'=>'New York','name'=>'John F. Kennedy International Airport'],
@@ -51,5 +54,6 @@ class DatabaseSeeder extends Seeder
         ], ['flight_no','date'], [
             'airline','from_code','to_code','depart_time','arrive_time','duration_min','non_stop','price','cabin','status'
         ]);
+
     }
 }

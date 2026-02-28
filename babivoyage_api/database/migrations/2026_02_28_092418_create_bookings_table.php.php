@@ -13,6 +13,8 @@ return new class extends Migration {
       $table->integer('adults')->default(1);
       $table->string('status')->default('confirmed');
       $table->timestamps();
+
+      $table->foreign('flight_id')->references('id')->on('flights')->cascadeOnDelete();
     });
   }
 

@@ -18,10 +18,10 @@ return new class extends Migration {
 
             $table->date('date');
 
-            $table->string('depart_time'); // keep like UI (8:10 AM)
+            $table->string('depart_time');
             $table->string('arrive_time');
 
-            $table->unsignedInteger('duration_min'); // minutes
+            $table->unsignedInteger('duration_min'); 
             $table->boolean('non_stop')->default(true);
 
             $table->decimal('price', 10, 2);
